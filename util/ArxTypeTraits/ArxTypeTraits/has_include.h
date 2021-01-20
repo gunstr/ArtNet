@@ -15,7 +15,7 @@
             // know it does have a working libstdc++ with all the
             // headers we care about, so provide a fake has_include
             #define ARX_SYSTEM_HAS_INCLUDE(x) 1
-        #elif defined(ARDUINO_SAM_DUE)
+        #elif defined(ARDUINO_SAM_DUE) || defined(ARDUINO_SAMD_INDUSTRUINO_D21G)
             // Arduino DUE's GCC version is 4.8.3 (GCC < 5.0).
             // If libstdc++ is used, std::function causes error
             // so currently we disable libstdc++ and use ArxTypeTraits
