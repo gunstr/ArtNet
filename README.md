@@ -30,6 +30,7 @@ Art-Net Sender/Receiver for Arduino (Ethernet, WiFi)
 #### Ethernet
 
 - Almost all platforms without WiFi
+
 Industruino support has been added in this fork.
 
 
