@@ -41,8 +41,13 @@
 #endif  // ARTNET_ENABLE_WIFI
 
 #ifdef ARTNET_ENABLE_ETHER
-#include <Ethernet.h>
+#ifdef ARDUINO_SAMD_INDUSTRUINO_D21G
+#include "Ethernet2.h"
+#include <EthernetUdp2.h>
+#else
+#include "Ethernet.h"
 #include <EthernetUdp.h>
+#endif
 #include "util/TeensyDirtySTLErrorSolution/TeensyDirtySTLErrorSolution.h"
 #endif  // ARTNET_ENABLE_ETHER
 
@@ -493,7 +498,9 @@ namespace arx {
 #ifdef ARTNET_ENABLE_ETHER
                 IPAddress my_ip = Ethernet.localIP();
                 IPAddress my_subnet = Ethernet.subnetMask();
-                Ethernet.MACAddress(r.mac);
+#ifndef ARDUINO_SAMD_INDUSTRUINO_D21G
+                Ethernet.MACAddress(r.mac); //Not supported by Ethernet2
+#endif
 #endif
                 for (size_t i = 0; i < 4; ++i) r.ip[i] = my_ip[i];
                 r.port_l = (DEFAULT_PORT >> 0) & 0xFF;
