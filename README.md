@@ -2,6 +2,12 @@
 
 Art-Net Sender/Receiver for Arduino (Ethernet, WiFi)
 
+This is a fork of [ArtNet repository](https://github.com/hideakitai/ArtNet) with added support for [Industruino](https://industruino.com/).
+
+[TOC]
+
+Below is a copy of the read me from the master repo.
+
 **NOTE : BREAKING API CHANGES (v0.2.0 or later)**
 
 ## Feature
@@ -30,9 +36,6 @@ Art-Net Sender/Receiver for Arduino (Ethernet, WiFi)
 #### Ethernet
 
 - Almost all platforms without WiFi
-
-Industruino support has been added in this fork.
-
 
 ## Usage
 
